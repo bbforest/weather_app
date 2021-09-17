@@ -13,7 +13,7 @@ export default function Weather({ temp, cond, temp_min, temp_max, feels_like, ic
                 <Text style={{ fontSize: 20 }}><Text style={{ color: "blue" }}>{temp_min}°</Text> / <Text style={{ color: "red" }}>{temp_max}°</Text> | 체감온도 {feels_like}°</Text>
             </View>
             <View style={style.container}>
-                <Text style={{fontSize: 50}}>{cond}</Text>
+                <Text style={{fontSize: 50}}>{Korean[cond]}</Text>
             </View>
         </LinearGradient>
     );
@@ -21,6 +21,10 @@ export default function Weather({ temp, cond, temp_min, temp_max, feels_like, ic
 
 Weather.PropTypes = {
     temp: PropTypes.number.isRequired
+};
+
+const Korean = {
+    Clear: "맑음"
 };
 
 const style = StyleSheet.create({
